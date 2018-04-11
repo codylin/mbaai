@@ -1,9 +1,22 @@
 <ion-view view-title="Account">
   <ion-content>
     <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
+    <ion-toggle  ng-change="tester()" ng-model="settings.toggleTest">
+        Toggle Test
     </ion-toggle>
+    <label class="item item-input">
+      <input type="text" ng-model="settings.textField" ng-change="tester()" placeholder="First Name">
+    </label>
+    <ion-checkbox ng-model="settings.checkbox">Checkbox</ion-checkbox>
     </ion-list>
+    <button ng-click="tester()" class="button button-block button-positive">
+      Console Log Settings
+    </button>
+    <div class="item range">
+      <i class="icon ion-volume-low"></i>
+      <input type="range" name="volume" ng-model="settings.range">
+      <i class="icon ion-volume-high"></i>
+    </div>
+
   </ion-content>
 </ion-view>

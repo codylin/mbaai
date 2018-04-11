@@ -23,6 +23,19 @@ angular.module('starter.controllers', [])
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
-    enableFriends: true
+    enableFriends: true,
+    toggleTest: false,
+    textField: "ABC",
+    checkbox: true,
+    range: 50
+  };
+
+  $scope.tester = function() {
+    console.log(" ")
+    console.log("toggleTest:", $scope.settings.toggleTest)
+    console.log("textField:", $scope.settings.textField)
+    console.log("checkbox:", $scope.settings.checkbox)
+    console.log("range:", $scope.settings.range)
+
   };
 });
