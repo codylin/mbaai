@@ -1,0 +1,7 @@
+"userRentalData": [
+  { "id": 1, "formNumber": "123456" , "itemName": "Jackhammer", "companyName": "Hammer Industry"},
+
+  { "id": 2, "formNumber": "234567" , "itemName": "HP Printer 3777dw", "companyName": "HP"},
+
+  { "id": 3, "formNumber": "345678" , "itemName": "Galaxy 7", "companyName": "Samsung"},
+]

@@ -26,10 +26,7 @@
 .controller('AjaxCtrl', function($scope, $http) {
   $scope.getClick = function(){
     console.log('GET JSON Requested')
-    $http({
-    method: 'GET',
-    url: 'https://jsonplaceholder.typicode.com/posts/1'
-  }).then(function successCallback(response) {
+    $http.get('./mockData/mockData.json').then(function successCallback(response) {
       $scope.getTest = response.data
       console.log($scope.getTest, 'LALALALA')
     }, function errorCallback(response) {
