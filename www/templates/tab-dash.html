@@ -61,13 +61,15 @@
       </button>
     </div>
     <div class="col">
-    <button type="button" ng-controller="AjaxCtrl" ng-click="getClick()" class="button button-positive">
+    <button type="button" ng-click="getClick()" class="button button-positive">
       Submit
     </button>
     </div>
-     <div class="col">
+
+    <div class="col">
     </div>
 
 </div>
+    <div ng-if="serial.match"> {{serial.match.id}} - {{serial.match.itemName}} - {{serial.match.companyName}} </div>
 </div>
 <!--popover. https://ionicframework.com/docs/v1/api/service/$ionicPopover/-->

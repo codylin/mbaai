@@ -1,6 +1,6 @@
  angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+.controller('DashCtrl', function($scope, $http) {
   $scope.serial = {
     number1: null,
     number2: null,
@@ -8,7 +8,8 @@
     number4: null,
     number5: null,
     number6: null,
-    number:  null, 
+    number:  null,
+    match: false
   };
 
   $scope.logSerial = function() {
@@ -21,19 +22,27 @@
     $scope.serial.number  = ($scope.serial.number1 + $scope.serial.number2 + $scope.serial.number3 + $scope.serial.number4 + $scope.serial.number5 + $scope.serial.number6)
     console.log('serial number', $scope.serial.number)
   };
-})
-
-.controller('AjaxCtrl', function($scope, $http) {
   $scope.getClick = function(){
     console.log('GET JSON Requested')
     $http.get('http://localhost:3000').then(function successCallback(response) {
-      $scope.getTest = response.data
-      console.log($scope.getTest, 'LALALALA')
+      $scope.getTest = response.data.data
+      console.log($scope.getTest, 'LALALALA');
+      $scope.compare();
     }, function errorCallback(response) {
       console.log('error')
     });
+  };
+  $scope.compare = function(){
+    angular.forEach($scope.getTest, function(value, key){
+      if ($scope.serial.number === value.formNumber) {
+        $scope.serial.match = value;
+        console.log("Worked", $scope.serial.match);
+      }
+    }) 
   }
+
 })
+
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
