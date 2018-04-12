@@ -26,7 +26,7 @@
 .controller('AjaxCtrl', function($scope, $http) {
   $scope.getClick = function(){
     console.log('GET JSON Requested')
-    $http.get('./mockData/mockData.json').then(function successCallback(response) {
+    $http.get('http://localhost:3000').then(function successCallback(response) {
       $scope.getTest = response.data
       console.log($scope.getTest, 'LALALALA')
     }, function errorCallback(response) {
