@@ -1,6 +1,42 @@
-angular.module('starter.controllers', [])
+ angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
+.controller('DashCtrl', function($scope) {
+  $scope.serial = {
+    number1: null,
+    number2: null,
+    number3: null,
+    number4: null,
+    number5: null,
+    number6: null,
+    number:  null, 
+  };
+
+  $scope.logSerial = function() {
+    $scope.serial.number1 = $scope.serial.number1.toString()
+    $scope.serial.number2 = $scope.serial.number2.toString()
+    $scope.serial.number3 = $scope.serial.number3.toString()
+    $scope.serial.number4 = $scope.serial.number4.toString()
+    $scope.serial.number5 = $scope.serial.number5.toString()
+    $scope.serial.number6 = $scope.serial.number6.toString()
+    $scope.serial.number  = ($scope.serial.number1 + $scope.serial.number2 + $scope.serial.number3 + $scope.serial.number4 + $scope.serial.number5 + $scope.serial.number6)
+    console.log('serial number', $scope.serial.number)
+  };
+})
+
+.controller('AjaxCtrl', function($scope, $http) {
+  $scope.getClick = function(){
+    console.log('GET JSON Requested')
+    $http({
+    method: 'GET',
+    url: 'https://jsonplaceholder.typicode.com/posts/1'
+  }).then(function successCallback(response) {
+      $scope.getTest = response.data
+      console.log($scope.getTest, 'LALALALA')
+    }, function errorCallback(response) {
+      console.log('error')
+    });
+  }
+})
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
@@ -24,7 +60,7 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true,
     toggleTest: false,
-    textField: "ABC",
+    textField: 0,
     checkbox: true,
     range: 50
   };

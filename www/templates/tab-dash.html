@@ -1,17 +1,73 @@
-<ion-view view-title="Dashboard">
-  <ion-content class="padding">
-    <h2>Welcome to Ionic</h2>
-    <p>
-    This is the Ionic starter for tabs-based apps. For other starters and ready-made templates, check out the <a href="http://market.ionic.io/starters" target="_blank">Ionic Market</a>.
-    </p>
-    <p>
-      To edit the content of each tab, edit the corresponding template file in <code>www/templates/</code>. This template is <code>www/templates/tab-dash.html</code>
-    </p>
-    <p>
-    If you need help with your app, join the Ionic Community on the <a href="http://forum.ionicframework.com" target="_blank">Ionic Forum</a>. Make sure to <a href="http://twitter.com/ionicframework" target="_blank">follow us</a> on Twitter to get important updates and announcements for Ionic developers.
-    </p>
-    <p>
-      <b>Psst!</b> - Try <a href="http://view.ionic.io/">Ionic View</a> to easily share and test your app with clients and co-workers.
-    </p>
-  </ion-content>
-</ion-view>
+<ion-view view-title="Account">
+    <ion-content>
+      <!--Verification code area -->
+    <div class="list">
+    <div class="row">
+      <div class="col">
+        <label id="code1" class="item item-input">
+           <input type="text" ng-model="serial.number1"  ng-change="logSerial()" placeholder="A">
+        </label>
+              </div>
+              <div class="col">
+                <label id="code2" class="item item-input" >
+          <input type="text" ng-model="serial.number2" ng-change="logSerial()" placeholder="B">
+        </label>
+              </div>
+              <div class="col">
+              <label id="code3" class="item item-input">
+                 <input type="text" ng-model="serial.number3" ng-change="logSerial()" placeholder="C">
+        </label>
+              </div>
+              <div class="col">
+              <label id="code4" class="item item-input" >
+                 <input type="text" ng-model="serial.number4" ng-change="logSerial()" placeholder="D">
+        </label>
+              </div>
+              <div class="col">
+              <label id="code5" class="item item-input" >
+                 <input type="text" ng-model="serial.number5" ng-change="logSerial()" placeholder="E">
+        </label>
+              </div>
+              <div class="col">
+              <label id="code6" class="item item-input" >
+                 <input type="text" ng-model="serial.number6" ng-change="logSerial()" placeholder="F">
+        </label>
+              </div>
+          </div>
+
+      </div>
+
+<!--Spacing -->
+<br>
+<br>
+<br>
+<!--Text area  -->
+<div class="card">
+  <div class="item item-divider">
+    Enter Verification Code
+  </div>
+  <div class="item item-text-wrap">
+    The code is provided by the customer picking up or receiving your item. This is to verify that you are giving the item to the right person
+  </div>
+</div>
+<!--buttons-->
+<div class="padding">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <button class="button button-light">
+        Help
+      </button>
+    </div>
+    <div class="col">
+    <button type="button" ng-controller="AjaxCtrl" ng-click="getClick()" class="button button-positive">
+      Submit
+    </button>
+    </div>
+     <div class="col">
+    </div>
+
+</div>
+</div>
+<!--popover. https://ionicframework.com/docs/v1/api/service/$ionicPopover/-->

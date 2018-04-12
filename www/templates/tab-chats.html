@@ -1,15 +1,84 @@
-<ion-view view-title="Chats">
-  <ion-content>
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
-        <button class="button button-block button-positive" ng-click="remove(chat)">
-          Delete
-        <button>
-      </ion-item>
-    </ion-list>
-  </ion-content>
+<ion-view view-title="Account">
+    <ion-content>
+      <!--Verification code area -->
+    <div class="list">
+    <div class="row">
+      <div class="col">
+        <label id="code1" class="item item-input">
+           <input type="text" ng-model="serial.number1"  ng-change="logSerial()" placeholder="A">
+        </label>
+              </div>
+              <div class="col">
+                <label id="code2" class="item item-input" >
+          <input type="text" ng-model="serial.number2" ng-change="logSerial()" placeholder="B">
+        </label>
+              </div>
+              <div class="col">
+              <label id="code3" class="item item-input">
+                 <input type="text" ng-model="serial.number3" ng-change="logSerial()" placeholder="C">
+        </label>
+              </div>
+              <div class="col">
+              <label id="code4" class="item item-input" >
+                 <input type="text" ng-model="serial.number4" ng-change="logSerial()" placeholder="D">
+        </label>
+              </div>
+              <div class="col">
+              <label id="code5" class="item item-input" >
+                 <input type="text" ng-model="serial.number5" ng-change="logSerial()" placeholder="E">
+        </label>
+              </div>
+              <div class="col">
+              <label id="code6" class="item item-input" >
+                 <input type="text" ng-model="serial.number6" ng-change="logSerial()" placeholder="F">
+        </label>
+              </div>
+          </div>
+
+      </div>
+
+<!--Spacing -->
+<br>
+<br>
+<br>
+<!--Text area  -->
+<div class="card">
+  <div class="item item-divider">
+    Enter Verification Code
+  </div>
+  <div class="item item-text-wrap">
+    The code is provided by the customer picking up or receiving your item. This is to verify that you are giving the item to the right person
+  </div>
+</div>
+<!--buttons-->
+<div class="padding">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <button class="button button-light">
+        Help
+      </button>
+    </div>
+    <div class="col">
+    <button type="button" ng-controller="AjaxCtrl" ng-click="clog()" class="button button-positive">
+      Submit
+    </button>
+    </div>
+     <div class="col">
+    </div>
+
+</div>
+</div>
+<!--popover. https://ionicframework.com/docs/v1/api/service/$ionicPopover/-->
+<ion-popover-view>
+    <ion-header-bar>
+      <h1 class="title">Verification Failed!</h1>
+    </ion-header-bar>
+    <ion-content>
+      The verification code is incorrect. Please try again
+    </ion-content>
+  </ion-popover-view>
+</ion-content>
+
 </ion-view>
