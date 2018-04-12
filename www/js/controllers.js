@@ -39,6 +39,6 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('MessagesCtrl', function($scope) {
+.controller('MessagesCtrl', function($scope, Messages) {
   $scope.messages = Messages.messagesAll();
-})
+});

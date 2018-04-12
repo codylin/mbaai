@@ -65,5 +65,5 @@ angular.module('starter.services', [])
     messagesAll: function() {
       return messages;
     }
-  }
+  };
 })
