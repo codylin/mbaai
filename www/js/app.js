@@ -68,6 +68,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+    .state('tab.messages', {
+      url: '/messages',
+      views: {
+        'tab-messages': {
+          templateUrl: 'templates/tab-messages.html',
+          controller: 'MessagesCtrl'
+        }
+      }
+    })
 
   .state('tab.account', {
     url: '/account',

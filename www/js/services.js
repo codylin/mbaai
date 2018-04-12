@@ -47,4 +47,23 @@ angular.module('starter.services', [])
       return null;
     }
   };
-});
+})
+
+.factory('Messages', function() {
+  var messages = [{
+    id:0,
+    message: 'This is the first secret message.'
+  }, {
+    id:1,
+    message: 'This is the second secret message.'
+  }, {
+     id:3,
+    message: 'This is the third secret message.'
+  }];
+
+  return {
+    messagesAll: function() {
+      return messages;
+    }
+  }
+})

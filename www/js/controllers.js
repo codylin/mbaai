@@ -10,7 +10,6 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
@@ -38,4 +37,8 @@ angular.module('starter.controllers', [])
     console.log("range:", $scope.settings.range)
 
   };
-});
+})
+
+.controller('MessagesCtrl', function($scope) {
+  $scope.messages = Messages.messagesAll();
+})
